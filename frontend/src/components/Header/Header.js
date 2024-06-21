@@ -32,12 +32,12 @@ export default function Header() {
                 ) : (
                 <Link to='/login'>Login</Link>
                 )}
-                <li>
+                {/* <li>
                     <Link to='/cart'>
                         Cart
-                        {cart.totalCount > 0 && <span>{cart.totalCount}</span>}
+                        {cart.totalCount > 0 && <span className={classes.cart_count}>{cart.totalCount}</span>}
                     </Link>
-                </li>
+                </li> */}
             </ul>
         </nav>
     </div>
