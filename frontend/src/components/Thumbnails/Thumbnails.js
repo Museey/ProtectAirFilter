@@ -16,14 +16,9 @@ export default function Thumbnails({ filters }) {
                 
                 <div className={classes.content}>
                     <div className={classes.name}>{filter.product_name}</div>
-                    {/* <span 
-                        className={`${classes.favorite} ${
-                        filter.favorite ? '' : classes.not
-                        }`}
-                        >
-                            33
-                    </span> */}
-
+                    {/* <div className={classes.line}>─────────────────────────</div> */}
+                    <div className={classes.codeText}>รหัสสินค้า</div>
+                    <div className={classes.code}>{filter.product_id}</div>
                 </div>
                 </Link>
             </li>
