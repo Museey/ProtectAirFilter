@@ -5,7 +5,7 @@ export const getAll = async () => sample_filters;
 
 export const search = async searchTerm => 
     sample_filters.filter(item => 
-        item.product_name.toLowerCase().includes(searchTerm.toLowerCase())
+        item.p_name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
 export const getById = async filterID =>

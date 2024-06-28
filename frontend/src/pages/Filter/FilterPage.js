@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import classes from './foodPage.module.css'
+import classes from './filterPage.module.css'
 import { Link, useParams } from 'react-router-dom';
-import { getById } from '../../services/foodService';
+import { getById } from '../../services/filterService';
+import NotFound from '../../components/NotFound/NotFound';
 export default function FoodPage() {
   const [filter, setFilter] = useState({});
   const {id} = useParams();
@@ -11,7 +12,9 @@ export default function FoodPage() {
   },[id]);
   return (
     <>
-    { filter && <div className={classes.container}>
+    { !filter? (
+        <NotFound message={'Filter Not Found!'} linkText='Back To Homepage'/>
+        ) : ( <div className={classes.container}>
         <img className={classes.image}
         src={`/filters/${filter.imageUrl}`}
         alt={filter.p_name}
@@ -30,7 +33,8 @@ export default function FoodPage() {
           </div>
           </Link>
         </div>
-      </div>}
+      </div>
+      )}
     </>
   )
 }
