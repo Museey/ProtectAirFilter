@@ -119,4 +119,21 @@ export const sample_filters = [
         p_name: "ถาดสำหรับ HONDA JAZZ,CITY'03 (ALGOTECH)",
         imageUrl:'F-036.jpg',
     },
+];
+
+export const sample_users = [
+    {
+        id: 1,
+        name: 'Heang',
+        email: 'heang@gmail.com',
+        passwort: '12345',
+        isAdmin: true,
+    },
+    {
+        id: 2,
+        name: 'Musee',
+        email: 'musee@gmail.com',
+        passwort: '12345',
+        isAdmin: false,
+    },
 ]

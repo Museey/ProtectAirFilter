@@ -1,12 +1,16 @@
-import { sample_filters } from "../data";
+import axios from "axios";
 
+export const getAll = async () => {
+    const { data } = await axios.get('/api/filters');
+    return data;
+};
 
-export const getAll = async () => sample_filters;
-
-export const search = async searchTerm => 
-    sample_filters.filter(item => 
-        item.p_name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
-export const getById = async filterID =>
-    sample_filters.find(item => item.id === filterID);
+export const search = async searchTerm => {
+    const { data } = await axios.get('/api/filters/search/' + searchTerm);
+    return data;
+}
+    
+export const getById = async filterID => {
+    const { data } = await axios.get('/api/filters/' + filterID);
+    return data;
+}
