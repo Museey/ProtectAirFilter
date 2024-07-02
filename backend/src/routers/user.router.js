@@ -4,6 +4,9 @@ import jwt from 'jsonwebtoken';
 import { BAD_REQUEST } from "../constants/httpStatus.js";
 
 const router = Router();
+router.get('/', (req, res) => {
+    res.send(sample_users);
+});
 
 router.post('/login', (req, res) => {
     const { email, password } = req.body;
@@ -16,7 +19,7 @@ router.post('/login', (req, res) => {
         return;
     }
 
-    res.status(BAD_REQUEST).send('Username or password is invalid');
+    res.status(BAD_REQUEST).send('Email or password is invalid');
 })
 
 const generateTokenResponse = user => {
@@ -38,3 +41,5 @@ const generateTokenResponse = user => {
         token,
     }
 }
+
+export default router;

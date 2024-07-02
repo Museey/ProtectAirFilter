@@ -126,14 +126,14 @@ export const sample_users = [
         id: 1,
         name: 'Heang',
         email: 'heang@gmail.com',
-        passwort: '12345',
+        password: '12345',
         isAdmin: true,
     },
     {
         id: 2,
         name: 'Musee',
         email: 'musee@gmail.com',
-        passwort: '12345',
+        password: '12345',
         isAdmin: false,
     },
 ]
