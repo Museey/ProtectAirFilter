@@ -1,23 +1,27 @@
 import { Router } from "express";
-import { sample_filters } from "../data.js";
+import { FilterModel } from "../models/filter.model.js";
+import handler from 'express-async-handler';
 
 const router = Router();
 
-router.get('/', (req, res) => {
-    res.send(sample_filters);
-});
-
-router.get('/search/:searchTerm', (req, res) => {
-    const { searchTerm } = req.params;
-    const filters = sample_filters.filter(item => 
-        item.p_name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+router.get(
+    '/', 
+    handler(async (req, res) => {
+        const filters = await FilterModel.find({});
     res.send(filters);
-});
+}));
 
-router.get('/:filterID', (req, res) => {
+router.get('/search/:searchTerm', handler(async (req, res) => {
+    const { searchTerm } = req.params;
+    const searchRegex = new RegExp(searchTerm, 'i');
+
+    const filters = await FilterModel.find({ p_name: { $regex: searchRegex } });
+    res.send(filters);
+}));
+
+router.get('/:filterID', handler(async (req, res) => {
     const { filterID } = req.params;
-    const filter = sample_filters.find(item => item.id === filterID);
+    const filter = await FilterModel.findById(filterID);
     res.send(filter)
-})
+}))
 export default router;

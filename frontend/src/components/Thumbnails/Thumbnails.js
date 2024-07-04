@@ -10,7 +10,7 @@ export default function Thumbnails({ filters }) {
                 <Link to={`/filter/${filter.id}`}>
                 <img 
                     className={classes.image}
-                    src={`/filters/${filter.imageUrl}`}
+                    src={`${filter.imageUrl}`}
                     alt={filter.p_name}
                 />
                 

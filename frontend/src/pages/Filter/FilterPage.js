@@ -16,7 +16,7 @@ export default function FoodPage() {
         <NotFound message={'Filter Not Found!'} linkText='Back To Homepage'/>
         ) : ( <div className={classes.container}>
         <img className={classes.image}
-        src={`/filters/${filter.imageUrl}`}
+        src={`${filter.imageUrl}`}
         alt={filter.p_name}
         />
 
