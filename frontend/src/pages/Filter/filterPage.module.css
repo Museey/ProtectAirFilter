@@ -1,5 +1,6 @@
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex: wrap;
@@ -16,12 +17,14 @@
     flex: 1 0;
     object-fit: contain;
     height: 35rem;
+    width: 70%;
     margin: 1rem;
 }
 
 .details {
     width: 100%;
     display: flex;
+    align-items: center;
     flex-direction: column;
     flex: 1 0;
     border-radius: 3rem;
@@ -56,4 +59,6 @@
     outline: none;
     text-align: center;
     margin-top: 2rem;
+    display: flex;
+    align-items: center;
 }

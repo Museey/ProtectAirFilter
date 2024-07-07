@@ -11,6 +11,21 @@ router.get(
     res.send(filters);
 }));
 
+router.get(
+    '/xxx', 
+    handler(async (req, res) => {
+        const filters = await FilterModel.findOne({}, { sort: { timestamp: -1 } }) // Sort by 'timestamp' in descending order
+        .then(latestDoc => {
+          console.log("Latest document:", latestDoc);
+        })
+        .catch(err => {
+          console.error(err);
+        })
+        .finally(() => {
+          client.close();
+        });
+    }));
+
 router.get('/search/:searchTerm', handler(async (req, res) => {
     const { searchTerm } = req.params;
     const searchRegex = new RegExp(searchTerm, 'i');
