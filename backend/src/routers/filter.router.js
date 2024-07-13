@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { FilterModel } from "../models/filter.model.js";
 import handler from 'express-async-handler';
+//import admin from "../middleware/admin.mid.js";
 
 const router = Router();
 
@@ -9,6 +10,52 @@ router.get(
     handler(async (req, res) => {
         const filters = await FilterModel.find({});
     res.send(filters);
+}));
+
+router.post(
+  "/",
+  //admin,
+  handler(async (req, res) => {
+    const { p_name, p_code, imageUrl } = req.body;
+
+    const filter = new FilterModel({
+      p_name,
+      p_code,
+      imageUrl,
+    });
+
+    await filter.save();
+
+    res.send(filter);
+  })
+);
+
+router.put(
+  "/",
+  //admin,
+  handler(async (req, res) => {
+    const { id, p_name, p_code, imageUrl } = req.body;
+
+    await FilterModel.updateOne(
+      { _id: id },
+      {
+        p_name,
+        p_code,
+        imageUrl,
+      }
+    );
+
+    res.send();
+  })
+);
+
+router.delete(
+  '/:filterID', 
+  // admin, 
+  handler(async (req, res) => {
+    const { filterID } = req.params;
+    await FilterModel.deleteOne({ _id: filterID });
+    res.send();
 }));
 
 router.get(

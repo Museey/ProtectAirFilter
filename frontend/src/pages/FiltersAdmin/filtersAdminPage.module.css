@@ -1,0 +1,59 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 10rem;
+  }
+  
+  .list {
+    margin: 1rem;
+    max-width: 70rem;
+  }
+  
+  a.add_filter {
+    display: inline-block;
+    background: darkred;
+    color: white;
+    padding: 0.7rem;
+    margin: 0.8rem 0;
+    border-radius: 1.5rem;
+  }
+  
+  a.add_food:hover {
+    opacity: 0.9;
+  }
+  
+  .list_item {
+    display: grid;
+    grid-template-columns:
+      minmax(1rem, 7rem)
+      minmax(1rem, 20rem)
+      minmax(1rem, 10rem)
+      minmax(1rem, 10rem);
+    font-size: 1rem;
+    height: 7rem;
+    align-items: center;
+    justify-content: center;
+
+  }
+  
+  .list_item img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100rem;
+    object-fit: cover;
+  }
+  
+  .actions > a {
+    margin-right: 1rem;
+    color: darkblue;
+    cursor: pointer;
+  }
+
+  .manage_filters {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(90, 90, 90);
+  }
