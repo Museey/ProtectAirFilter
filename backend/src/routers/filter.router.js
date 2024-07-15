@@ -6,12 +6,20 @@ import handler from 'express-async-handler';
 
 const router = Router();
 
+// router.get(
+//     '/', 
+//     handler(async (req, res) => {
+//         const filters = await FilterModel.find({});
+//     res.send(filters);
+// }));
+
 router.get(
-    '/', 
-    handler(async (req, res) => {
-        const filters = await FilterModel.find({});
-    res.send(filters);
-}));
+  '/', 
+  handler(async (req, res) => {
+      const latestFilter = await FilterModel.find().sort({ createdAt: -1 }).limit(1);
+      res.send(latestFilter);
+  })
+);
 
 router.post(
   "/",

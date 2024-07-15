@@ -1,15 +1,15 @@
 .header {
-    background: white;
+    background: rgb(172, 20, 20);
     padding: 0;
     border-bottom: 1px solid #e72929;
 }
 
 .header a {
-    color: #af1313;
+    color: #ffffff;
 }
 
 .header a:hover {
-    background: #e72929;
+    background: #fc6e6e;
     color: white;
     cursor: pointer;
 }
@@ -21,7 +21,7 @@
 }
 
 .logo {
-    font-weight: bold;
+    font-weight: bolder;
     padding: 1rem;
 }
 
@@ -43,7 +43,7 @@
 .menu {
     position: absolute;
     z-index: 1;
-    background-color: whitesmoke;
+    background-color: rgb(255, 0, 0);
     display: none;
 }
 
@@ -57,7 +57,7 @@
     
 }
 
-.cart_count {
-    background-color: #ff4d4d;
-    color: white;
+.line {
+    background-color: rgb(43, 185, 0);
+    font-weight: bolder;
 }
