@@ -1,5 +1,5 @@
 .list {
-    background-color: rgb(102, 155, 185);
+    background-color: rgb(255, 46, 46);
     display: flex;
     justify-content: center;  
     align-items: center;
@@ -9,7 +9,7 @@
 }
 
 .list li a {
-    background-color: rgb(187, 200, 201);
+    background-color: rgb(242, 170, 170);
     height: 22.5rem;
     width: 20rem;
     border: 1px solid whitesmoke;
