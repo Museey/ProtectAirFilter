@@ -15,6 +15,7 @@ export default function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/all" element={<HomePage />} />
       <Route path="/search/:searchTerm" element={<HomePage />} />
       <Route path="/filter/:id" element={<FilterPage />} />
       <Route path="/login" element={<LoginPage />} />
