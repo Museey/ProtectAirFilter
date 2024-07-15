@@ -9,7 +9,7 @@ const router = Router();
 router.get(
     '/', 
     handler(async (req, res) => {
-        const filters = await FilterModel.find({});
+        const filters = await FilterModel.find({}).limit(10);
     res.send(filters);
 }));
 
