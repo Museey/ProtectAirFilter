@@ -72,7 +72,12 @@ router.get('/search/:searchTerm', handler(async (req, res) => {
     const { searchTerm } = req.params;
     const searchRegex = new RegExp(searchTerm, 'i');
 
-    const filters = await FilterModel.find({ p_name: { $regex: searchRegex } });
+    const filters = await FilterModel.find({
+      $or: [
+          { p_name: { $regex: searchRegex } },
+          { p_code: { $regex: searchRegex } }
+      ]
+  });
     res.send(filters);
 }));
 
